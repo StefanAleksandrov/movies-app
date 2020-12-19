@@ -1,0 +1,29 @@
+{{> header}}
+
+<div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
+    <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
+        class="img-fluid" alt="Responsive image">
+    <h1 class="display-4">Movies</h1>
+    <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
+</div>
+
+{{#if loggedIn}}
+<h1 class="text-center">Movies</h1>
+<section>
+    <a href="/addmovie" class="btn btn-warning ">Add Movie</a>
+    <form class="search float-right">
+        <label>Search: </label>
+        <input type="text">
+        <input type="submit" class="btn btn-info" value="Search" onclick="searchFilter(event)">
+    </form>
+</section>
+
+<div class="mt-3 row">
+    {{#each movies}}
+        {{> movie}}
+    {{/each}}
+</div>
+</div>
+{{/if}}
+
+{{> footer}}
