@@ -367,7 +367,7 @@ function checkLoggedIn() {
 }
 
 function searchFilter(event) {
-    let value = event.currentTarget.previousElementSibling.value.toLowerCase();
+    let value = event.currentTarget.nextElementSibling.value.toLowerCase();
     const divElement = document.querySelector("div.row");
     const divElements = divElement.children;
     let elementsArr = Array.from(divElements);
