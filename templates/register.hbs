@@ -1,6 +1,6 @@
 {{> header}}
 
-<form class="text-center border border-light p-5" action="/register" method="post">
+<form class="text-center border border-light p-5 min-heigth-90" action="/register" method="post">
     <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" placeholder="Email" name="email" value="">
@@ -15,7 +15,8 @@
         <input type="password" class="form-control" placeholder="Repeat-Password" name="repeatPassword" value="">
     </div>
 
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="btn btn-primary mt-1 w-100">Register</button>
+    <p class="mt-5">Already registered? Please <a href="/login">log in</a> using your credentials!</p>
 </form>
 
 {{> footer}}

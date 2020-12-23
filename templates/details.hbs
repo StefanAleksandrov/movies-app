@@ -1,25 +1,24 @@
 {{> header}}
 
-<div class="container">
-    <div class="bg-light text-dark">
-        <h1>Movie title: {{title}}</h1>
-
+<div class="container bg-light w-100">
+    <div class="text-dark mx-5" style="min-height: 88vh;">
         <div class="row">
-            <div class="col-md-8">
-                <img class="img-thumbnail" src="{{imageUrl}}" alt="{{title}}"">
+            <h1 class="mt-5 col-12 text-left" >{{title}}</h1>
+            <div class="col-md-4">
+                <img class="img-thumbnail" src="{{imageUrl}}" alt="{{title}}">
             </div>
-            <div class=" col-md-4 text-center">
+            <div class=" col-md-8 text-center">
                 <h3 class="my-3 ">Movie Description</h3>
                 <p>{{description}}</p>
                 {{#if isCreator}}
                 <a class="btn btn-danger" href="/delete/{{id}}">Delete</a>
                 <a class="btn btn-warning" href="/edit/{{id}}">Edit</a>
-                {{/if}}
-
-                {{#if liked}}
-                <p><a class="btn btn-secondary" href="/unlike/{{id}}">Unlike</a>{{likesCount}} likes.</p>
                 {{else}}
-                <p><a class="btn btn-primary" href="/like/{{id}}">Like</a>{{likesCount}} likes.</p>
+                    {{#if liked}}
+                    <p><a class="btn btn-secondary" href="/unlike/{{id}}">Unlike</a><span class="ml-2">{{likesCount}} likes.</span></p>
+                    {{else}}
+                    <p><a class="btn btn-primary" href="/like/{{id}}">Like</a><span class="ml-2">{{likesCount}} likes.</span></p>
+                    {{/if}}
                 {{/if}}
             </div>
         </div>

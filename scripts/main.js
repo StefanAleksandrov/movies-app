@@ -42,8 +42,8 @@ const router = Sammy("#container", function () {
             "footer": "./templates/partials/footer.hbs",
         })
             .then(function () {
-                this.partial("./templates/login.hbs")
-            })
+                this.partial("./templates/login.hbs");
+            });
     });
 
     this.get("/register", function (ctx) {

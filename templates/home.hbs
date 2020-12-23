@@ -1,20 +1,20 @@
 {{> header}}
 
-<div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
+<div class="jumbotron jumbotron-fluid text-dark mb-0">
     <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
         class="img-fluid" alt="Responsive image">
-    <h1 class="display-4">Movies</h1>
+    <h1 class="display-4 mt-3">Movies</h1>
     <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
 </div>
 
 {{#if loggedIn}}
 <h1 class="text-center">Movies</h1>
-<section>
-    <a href="/addmovie" class="btn btn-warning ">Add Movie</a>
-    <form class="search float-right">
-        <label>Search: </label>
-        <input type="text">
-        <input type="submit" class="btn btn-info" value="Search" onclick="searchFilter(event)">
+
+<section class="row mx-auto">
+    <a href="/addmovie" class="btn btn-warning d-inline-block mx-auto col-3">Add Movie</a>
+    <form class="search col-9 px-0">
+        <input type="submit" class="btn btn-info ml-3 float-right" value="Search" onclick="searchFilter(event)">
+        <input type="text" class="ml-auto h-100 px-2 float-right">
     </form>
 </section>
 
@@ -22,7 +22,6 @@
     {{#each movies}}
         {{> movie}}
     {{/each}}
-</div>
 </div>
 {{/if}}
 
